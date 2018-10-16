@@ -1,0 +1,85 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Cade Meu Médico? </title>
+    <link href="@Url.Content("/Content/bootstrap.min.css")" rel="stylesheet" />
+    <link rel="icon" href="https://png.icons8.com/nolan/50/000000/stethoscope.png" type="image/x-icon" />
+    <style>
+        body {
+            padding-top: 60px;
+            background-color: #505a66;
+            background-image: linear-gradient(to top, #09203f 0%, #537895 100%);
+            background-attachment: fixed;
+            width: 100%;
+            height: 100vh;
+            color: white;
+        }
+
+        .rodape {
+            display: flex;
+            align-content: center;
+            justify-content: center;
+            flex-wrap: wrap;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            text-align: center;
+            border: solid 3px rgb(38, 36, 39);
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-dark bg-dark">
+        <a class="navbar-brand" href="#">Cade meu Médico? </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+            <ul class="navbar-nav">
+                <li class="nav-item active">
+                    <a class="nav-link" href="~/Home/index">Página Principal<span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Notícias</a>
+                </li>
+                <li class="nav-item">
+                    @Html.ActionLink("Medicos", "Index", "Medicos")
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="~/Cidades">Cidade</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="~/Especialidades">Especialidades</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="~/Usuarios">Cadastro de Usuário</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+   
+    <div class="container">
+        <section>
+            @RenderBody()
+        </section>
+    </div>
+    
+    <footer class="rodape">
+        <p>Cade Meu Medico by Erik Santos &copy </p>
+        <p>Entre em contato <a href="maito:eriksantos@icloud.com">eriksantos@icloud.com</a>.</p>
+    </footer>
+
+    <script src="@Url.Content("~/Scripts/jquery-3.3.1.min.js")">
+    </script>
+    <script src="@Url.Content("~/Scripts/bootstrap.min.js")">
+    </script>
+    @RenderSection("script", required: false)
+</body>
+</html>
